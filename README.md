@@ -15,6 +15,8 @@ Because standard hardware lacks the AMD Secure Processor and the RMP, this proje
 * **Guest Module (`sim.c`):** An out-of-tree kernel module exposing a `/proc` interface to trigger the hypercalls without locking the guest kernel.
 * **Payload Routing:** Passes mock physical address payloads (simulating the VMSA pointer) across the isolation boundary via the `RBX` register.
 
+![KVM vCPU Synchronizer Architecture](diagram.drawio.png)
+
 ## Execution
 
 Booting a VM is recommended (so the physical host is not used as a hypervisor for this experiment). E.g. boot Ubuntu 26 and load the Linux kernel 7.1.3.
